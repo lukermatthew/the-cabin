@@ -6,7 +6,6 @@ import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import SpinnerMini from "../../ui/SpinnerMini";
-
 import { useUser } from "./useUser";
 import { useUpdateUser } from "./useUpdateUser";
 import { formatDistanceFromNow, formattedDate } from "../../utils/helpers";

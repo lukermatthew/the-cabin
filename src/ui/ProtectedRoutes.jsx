@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useUser } from "../features/authentication/UseUser";
+import { useUser } from "../features/authentication/useUser";
 import Spinner from "./Spinner";
 import styled from "styled-components";
 
