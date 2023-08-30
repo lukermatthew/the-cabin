@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getGuests } from "../../services/apiGuests";
+import { getGuests } from "../../services/apiGuest";
 import { useSearchParams } from "react-router-dom";
 import { optionPageSize } from "../../utils/constants";
 

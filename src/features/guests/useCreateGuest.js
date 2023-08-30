@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
-import { createEditGuest } from "../../services/apiGuests";
+import { createEditGuest } from "../../services/apiGuest";
 
 export const useCreateGuest = () => {
   const queryClient = useQueryClient();

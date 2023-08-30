@@ -1,4 +1,4 @@
-import supabase, { supabaseUrl } from "./supabase";
+import supabase from "./supabase";
 
 // REMEMBER RLS POLICIES
 export async function getGuests({ page, pageSize, sortBy }) {
