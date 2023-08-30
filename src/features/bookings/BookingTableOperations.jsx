@@ -2,25 +2,7 @@ import SortBy from "../../ui/SortBy";
 import Filter from "../../ui/Filter";
 import TableOperations from "../../ui/TableOperations";
 import PageSize from "../../ui/PageSize";
-
-export const optionPageSize = [
-  {
-    value: 5,
-    label: " Row 5",
-  },
-  {
-    value: 10,
-    label: "Row 10",
-  },
-  {
-    value: 50,
-    label: "Row 50",
-  },
-  {
-    value: 100,
-    label: "Row 100",
-  },
-];
+import { optionPageSize } from "../../utils/constants";
 
 function BookingTableOperations() {
   const optionFilter = [

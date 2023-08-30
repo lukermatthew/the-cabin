@@ -1,23 +1,27 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { Toaster } from "react-hot-toast";
+
+import { DarkModeProvider } from "./context/DarkModeContext";
+import AppLayout from "./ui/AppLayout";
+import GlobalStyles from "./styles/GlobalStyles";
+import ProtectedRoutes from "./ui/ProtectedRoutes";
 import Dashboard from "./pages/Dashboard";
 import Bookings from "./pages/Bookings";
 import Booking from "./features/bookings/Booking";
 import Cabins from "./pages/Cabins";
-import Users from "./pages/Users";
-import Settings from "./pages/Settings";
-import Account from "./pages/Account";
-import Login from "./pages/Login";
-import PageNotFound from "./pages/PageNotFound";
-import GlobalStyles from "./styles/GlobalStyles";
-import AppLayout from "./ui/AppLayout";
-import { Toaster } from "react-hot-toast";
 import CheckIn from "./pages/CheckIn";
-import ProtectedRoutes from "./ui/ProtectedRoutes";
-import { DarkModeProvider } from "./context/DarkModeContext";
 import CreateCabin from "./features/cabins/CreateCabin";
 import UpdateCabin from "./features/cabins/UpdateCabin";
+import Settings from "./pages/Settings";
+import Account from "./pages/Account";
+import Users from "./pages/Users";
+import Login from "./pages/Login";
+import PageNotFound from "./pages/PageNotFound";
+import Guests from "./pages/Guests";
+import UpdateGuest from "./features/guests/UpdateGuest";
+import CreateGuest from "./features/guests/CreateGuest";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -53,6 +57,9 @@ const App = () => {
                 <Route path="cabins/create" element={<CreateCabin />} />
                 <Route path="cabins/edit" element={<UpdateCabin />} />
                 <Route path="users" element={<Users />} />
+                <Route path="guests" element={<Guests />} />
+                <Route path="guests/create" element={<CreateGuest />} />
+                <Route path="guests/edit" element={<UpdateGuest />} />
                 <Route path="settings" element={<Settings />} />
                 <Route path="account" element={<Account />} />
               </Route>

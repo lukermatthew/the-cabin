@@ -1,5 +1,3 @@
-import { styled } from "styled-components";
-import AddCabin from "../features/cabins/AddCabin";
 import CabinTable from "../features/cabins/CabinTable";
 import CabinTableOperations from "../features/cabins/CabinTableOperations";
 import { FaPlus } from "react-icons/fa";

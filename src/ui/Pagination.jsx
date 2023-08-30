@@ -1,7 +1,7 @@
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
 import { useSearchParams } from "react-router-dom";
 import styled from "styled-components";
-import { optionPageSize } from "../features/bookings/BookingTableOperations";
+import { optionPageSize } from "../utils/constants";
 
 const StyledPagination = styled.div`
   width: 100%;
