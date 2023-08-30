@@ -19,8 +19,6 @@ monitored sales with a beautiful dashboard,chart and analytics
 
 ## Features
 
-Highlight the key features of your project. Use bullet points or a numbered list to make it easy to read.
-
 - Feature 1: Manage Cabins
 - Feature 2: Manage Bookings
 - Feature 3: Bookings - Check In
@@ -35,7 +33,7 @@ Highlight the key features of your project. Use bullet points or a numbered list
 
 ### Installation
 
-Step-by-step instructions on how to install and set up your project.
+Step-by-step instructions on how to install and set up project.
 
 1. Step 1: git clone git@github.com:lukermatthew/the-cabin.git
 2. Step 2: yarn install or npm install
