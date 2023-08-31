@@ -2,6 +2,7 @@ import TableOperations from "../../ui/TableOperations";
 import PageSize from "../../ui/PageSize";
 import SortBy from "../../ui/SortBy";
 import { optionPageSize } from "../../utils/constants";
+import Search from "../../ui/Search";
 
 const GuestTableOperations = () => {
   const optionsSortBy = [
@@ -14,8 +15,10 @@ const GuestTableOperations = () => {
       label: "Sort by name (Z-A)",
     },
   ];
+
   return (
     <TableOperations>
+      <Search />
       <PageSize options={optionPageSize} />
       <SortBy options={optionsSortBy} />
     </TableOperations>

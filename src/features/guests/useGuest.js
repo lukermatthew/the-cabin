@@ -6,6 +6,9 @@ import { optionPageSize } from "../../utils/constants";
 export const useGuest = () => {
   const [searchParams] = useSearchParams();
 
+  // SEARCH
+  const searchQuery = searchParams.get("fullName");
+
   // SORT
   const sortByRaw = searchParams.get("sortBy") || "fullName-asc";
   const [field, direction] = sortByRaw.split("-");
@@ -23,8 +26,8 @@ export const useGuest = () => {
     data: { data: guests, count } = {},
     isError,
   } = useQuery({
-    queryKey: ["guests", sortBy, page, pageSize],
-    queryFn: () => getGuests({ sortBy, page, pageSize }),
+    queryKey: ["guests", sortBy, page, pageSize, searchQuery],
+    queryFn: () => getGuests({ sortBy, page, pageSize, searchQuery }),
   });
 
   return { isLoading, guests, isError, count };
