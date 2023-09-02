@@ -5,6 +5,7 @@ import Input from "../../ui/Input";
 import FormRowVertical from "../../ui/FormRowVertical";
 import { useLogin } from "./useLogin";
 import SpinnerMini from "../../ui/SpinnerMini";
+import { toast } from "react-hot-toast";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -14,7 +15,20 @@ function LoginForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (!email && !password) return;
+
+    const isValidEmail = (email) => {
+      // Regular expression pattern for a valid email address
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      return emailPattern.test(email);
+    };
+
+    if (!email || !password)
+      return toast.error("Please provide email and password");
+
+    if (!isValidEmail(email)) {
+      toast.error("Invalid email format. Please enter a valid email address.");
+      return;
+    }
 
     login({ email, password });
   }
@@ -23,14 +37,13 @@ function LoginForm() {
     <Form onSubmit={handleSubmit}>
       <FormRowVertical label="Email address">
         <Input
-          type="email"
+          type="text"
           id="email"
           // This makes this form better for password managers
           autoComplete="username"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           disabled={isLoading}
-          required
         />
       </FormRowVertical>
       <FormRowVertical label="Password">
@@ -41,7 +54,6 @@ function LoginForm() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           disabled={isLoading}
-          required
         />
       </FormRowVertical>
       <FormRowVertical>
